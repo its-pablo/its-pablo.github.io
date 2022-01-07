@@ -1,0 +1,40 @@
+@font-face {
+    src: url(/bugs/assets/fonts/px_sans_nouveaux.woff) format("woff");
+    font-family: "nouveaux";
+}
+
+.buttons {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;
+}
+
+.action_btn {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;
+}
+aside {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 8px;
+  display: flex;
+  align-items: stretch;
+}
+
+aside .tree-view {
+  width: 100%;
+  /* TODO: Move scrollbar into the recessed region? */
+  overflow-y: scroll;
+}
+main {
+  width: 65rem;
+  margin-left: 240px;
+  margin-bottom: 60px;
+}
+
+#system-operational {
+  cursor: url(/cursors/default.cur), default;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery tests - window dragging</title>
+    <style>
+      #draggable {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+        background: gray;
+        color: white
+      }
+    </style>
+    <script src="/scripts/3party/jquery/jquery.js"></script>
+    <script src="/scripts/3party/jquery/jqueryui.js"></script>
+    <script>
+      $(function() {
+        $("#draggable").draggable();
+        $("#draggable").resizable();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="draggable">
+      <p>Drag me around - TEST</p>
+      <br />
+      <p>This uses jquery. Submit feedback at <a href="/bugs">this page</a></p>
+    </div>
+  </body>
+</html>
