@@ -1,0 +1,108 @@
+@font-face {
+    src: url(/bugs/assets/fonts/px_sans_nouveaux.woff) format("woff");
+    font-family: "nouveaux";
+}
+
+body {
+    background: linear-gradient(0.3turn, #0094FF, #0026FF);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: "nouveaux";
+    font-size: 8px;
+    overflow-x: hidden;
+}
+
+body>.main {
+    max-width: 420px;
+    margin: auto;
+    background: rgb(192,192,192);
+    padding: 15px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.6;
+    background: rgb(192,192,192);
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+}
+
+body>.main>.title {
+    font-size: 16px;
+    text-shadow: -1px 0 black;
+    position: relative;
+    left: 1px;
+    display: block;
+    line-height: 2em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+body>.main>ul {
+    line-height: 1.8;
+}
+
+body>.main>p{
+    line-height: 1.8;
+}
+
+body>.main .bold {
+    letter-spacing: 1px;
+    text-shadow: -1px 0 black;
+    position: relative;
+    left: 1px;
+}
+
+body>.main .bold-red {
+    letter-spacing: 1px;
+    text-shadow: -1px 0 rgb(202, 15, 15);
+    color: rgb(202, 15, 15);
+    position: relative;
+    left: 1px;
+}
+
+body>.main .header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+body>.main .text-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-input {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    box-shadow: inset 1px 1px grey, 1px 0 #fff, 0 1px #fff, 1px 1px #fff;
+    background-color: white;
+    font-family: nouveaux;
+    font-size: 8px;
+    padding: 2px;
+    line-height: 1em;
+}
+
+.text-input:focus {
+    outline: 0;
+}
+
+body>.main textarea {
+    max-width: 100%;
+    min-width: 100%;
+    line-height: 1.7em;
+    height: 4rem;
+}

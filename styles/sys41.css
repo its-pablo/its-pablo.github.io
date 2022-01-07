@@ -1,0 +1,70 @@
+/*Found this in sys42*/
+/*Remember, actual themes are found at /styles/themes/* */
+.context {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  text-shadow: 0 0 transparent;
+  text-align: left;
+  border: 1px solid #555;
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+::-webkit-scrollbar-button:vertical:start {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+::-webkit-scrollbar-button:vertical:end {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+html {
+  /* If html removed, will show default cursor at bottom.*/
+  background: #c0c0d0;
+  overflow: hidden;
+  cursor: url("/cursors/default.cur"), default;
+}
+button,
+a,
+select,
+.ld {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+
+input,
+textarea {
+  cursor: url("/cursors/text.cur"), text;
+}
+#container {
+  width: 65rem;
+  margin-left: 240px;
+  margin-bottom: 60px;
+}
+input[type="checkbox"] {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+::-webkit-scrollbar {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+.draggable {
+  width: 25%;
+  min-height: 6.5em;
+  touch-action: none;
+  user-select: none;
+}
+
+label {
+  cursor: url("/cursors/default.cur"), default;
+}
+
+textarea::-webkit-scrollbar-track:hover {
+  background: red;
+  cursor: pointer;
+}

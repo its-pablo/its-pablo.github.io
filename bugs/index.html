@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>itspablo</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/styles/jquery/jqueryui.css"/>
+    <link id="stylelink" rel="stylesheet" href="/styles/themes/98.css" />
+    <link rel="stylesheet" href="/styles/menu98.css" />
+    <link rel="stylesheet" href="/styles/sys41.css" />
+    <link rel="stylesheet" href="/styles/somestyles.css" />
+    <script src="/scripts/allscripts.js"></script>
+    <script src="/scripts/sys41.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/scripts/3party/jquery/jquery.js"></script>
+    <script src="/scripts/3party/jquery/jqueryui.js"></script>
+    <script src="/scripts/3party/darkmode.js"></script>
+  </head>
+  <body>
+    <main-sidebar></main-sidebar>
+    <div id="container">
+      <h4>
+        Found a problem?
+      </h4>
+      <p>
+        No problem! Just fill out this quick form and I can get back to you ASAP. 
+      </p>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input
+          type="hidden"
+          name="apikey"
+          value="896d2f9a-f729-443b-be74-041986e1e117"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="New bug/feedback entry on website"
+        />
+        <input type="hidden" name="from_name" value="itspablo submissions">
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="name20">Name</label>
+          <input id="name20" type="text" name="name" placeholder="John Doe"/>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="email20">Email*</label>
+          <input id="email" type="email" name="email" required placeholder="email@example.com"/>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="problem20">Problem*</label>
+          <input id="problem20" type="text" name="problem" required placeholder="Subject of the issue"/>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="report">Type of report</label>
+          <select id="report" name="report_type" required>
+            <option selected>Bug</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="subject_issue">Subject</label>
+          <select id="subject_issue" name="subject_problem" required>
+            <option>Terminx</option>
+            <option selected>Windows 96 Build</option>
+            <option>Personal website</option>
+            <option>Windows 93 - ie</option>
+            <option>Windows 93 Build</option>
+          </select>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="message20">Message*</label>
+          <textarea minlength="30" maxlength="1000" rows="10" id="message20" name="message" required placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+        <br />
+        <br />
+        <input type="hidden" name="redirect" value="/bugs/success" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button type="submit">Submit Form</button>
+      </form>
+    </div>
+  </body>
+</html>

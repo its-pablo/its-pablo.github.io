@@ -1,0 +1,1 @@
+Even though it looks like this folder `cursors` only has this one file, all of the cursor files are stored here. *They are just hidden*. Do not remove this.

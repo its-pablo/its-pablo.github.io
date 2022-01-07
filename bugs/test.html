@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <link rel="stylesheet" href="/bugs/assets/css/app.css" />
+    <link rel="stylesheet" href="/bugs/assets/css/normalize.css" />
+    <div class="main">
+      <span class="title">Report a bug</span>
+      <hr />
+      <p>
+        This utility will allow you to report bugs to the Windows 96 team.
+      </p>
+      <p>
+        Before submitting a bug, please ensure:
+      </p>
+      <ul>
+        <li>any personal information is censored.</li>
+        <li>
+          you are using a clean copy of Windows 96 to rule out any interference
+          from scripts.
+        </li>
+        <li>you are using the correct version of Windows 96.</li>
+        <li>you provide instructions on how to reproduce it.</li>
+        <li>
+          you provide screenshots if possible (use imgur and paste urls in
+          description).
+        </li>
+      </ul>
+      <p>
+        <span class="bold-red"
+          >Do not waste our time with nonsense bug reports. You are IP logged
+          and will be banned from submitting future reports.</span
+        >
+      </p>
+      <hr />
+      <form>
+        <span class="header bold">Title</span>
+        <input
+          maxlength="150"
+          minlength="10"
+          name="title"
+          class="text-input"
+          type="text"
+        />
+
+        <span class="header bold">Description</span>
+        <textarea
+          name="description"
+          class="text-input"
+          minlength="100"
+          maxlength="1024"
+        ></textarea>
+        <br /><br />
+        <input class="button" type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
