@@ -1,5 +1,5 @@
 /*Found this in sys42*/
-/*Remember, actual themes are found at /styles/themes/* */
+/*Remember, actual themes are found at /assets/styles/themes/* */
 .context {
   background: rgba(255, 255, 255, 0.9);
   color: #000;
@@ -13,7 +13,6 @@
   padding: 0;
   height: auto;
 }
-
 body {
   margin: 0;
   height: 100%;
@@ -26,10 +25,10 @@ body {
   cursor: url("/cursors/pointer.cur"), pointer;
 }
 html {
-  /* If html removed, will show default cursor at bottom.*/
   background: #c0c0d0;
   overflow: hidden;
   cursor: url("/cursors/default.cur"), default;
+  font-size: medium;
 }
 button,
 a,
