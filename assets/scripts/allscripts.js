@@ -247,3 +247,9 @@ document.addEventListener("load", function () {
 
   /*document.querySelector('button[aria-label="close"]').onclick = function(){document.querySelector('button[aria-label="close"]').parentNode.removeChild(this)}*/
 })
+
+$window({
+  title: "test title window",
+  body: "<img> That was an image element",
+  draggable: true
+})
