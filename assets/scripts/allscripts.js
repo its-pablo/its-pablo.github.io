@@ -1,21 +1,6 @@
 "use strict";
 //THEMES
 
-function changeTo7() {
-  link.setAttribute("href", "/styles/themes/7.css");
-  localStorage.setItem("style", "/styles/themes/7.css");
-}
-
-function changeTo98() {
-  link.setAttribute("href", "/styles/themes/98.css");
-  localStorage.setItem("style", "/styles/themes/98.css");
-}
-
-function changeToXp() {
-  link.setAttribute("href", "/styles/themes/xp.css");
-  localStorage.setItem("style", "/styles/themes/xp.css");
-}
-
 function themeChange(name) {
   let link = document.getElementById("stylelink");
   link.setAttribute("href", `/styles/themes/${name}.css`)
@@ -23,7 +8,7 @@ function themeChange(name) {
 }
 
 //MENUS
-(function () {
+document.addEventListener("load", function () {
   function addSidebar() {
     class Sidebar extends HTMLElement {
       connectedCallback() {
@@ -261,4 +246,4 @@ function themeChange(name) {
   customElements.define("start-menu", start);
 
   /*document.querySelector('button[aria-label="close"]').onclick = function(){document.querySelector('button[aria-label="close"]').parentNode.removeChild(this)}*/
-})()
+})
