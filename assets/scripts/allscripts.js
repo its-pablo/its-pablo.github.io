@@ -1,15 +1,6 @@
 "use strict";
 //THEMES
-var link = document.getElementById("stylelink");
 
-var style = localStorage.getItem("style");
-
-/*if ("style" in localStorage) {
-  link.setAttribute("href", localStorage.getItem("style"));
-} else {
-  link.setAttribute("href", "/styles/themes/98.css");
-  localStorage.setItem("style", "/styles/themes/98.css");
-}*/
 function changeTo7() {
   link.setAttribute("href", "/styles/themes/7.css");
   localStorage.setItem("style", "/styles/themes/7.css");
@@ -25,11 +16,18 @@ function changeToXp() {
   localStorage.setItem("style", "/styles/themes/xp.css");
 }
 
+function themeChange(name) {
+  let link = document.getElementById("stylelink");
+  link.setAttribute("href", `/styles/themes/${name}.css`)
+  localStorage.setItem("theme", name);
+}
+
 //MENUS
-function addSidebar() {
-  class Sidebar extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
+(function () {
+  function addSidebar() {
+    class Sidebar extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
     <aside>
       <ul class="tree-view">
         <li>
@@ -57,78 +55,22 @@ function addSidebar() {
         <li style="cursor:auto"><a id="system-operational"><i>Loading...</i></a></li>
       </ul>
     </aside>`;
+      }
     }
+
+    customElements.define("main-sidebar", Sidebar);
   }
 
-  customElements.define("main-sidebar", Sidebar);
-}
+  window.addEventListener("load", addSidebar());
+  operational = document.getElementById("system-operational");
+  //Get text from URL
+  fetch("//its-pablo.github.io/status.txt")
+    .then(response => response.text())
+    .then(response => operational.innerHTML = response)
+    .catch(error => operational.innerText = "Error. Failed to fetch website status " + error)
 
-class debug extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = `
-    <p>DEBUG ONLY</p>
-    <button
-      style="
-  margin-left: 240px;"
-      class="main"
-      onclick="changeTo7()"
-    >
-      Change Theme to WINDOWS 7
-    </button>
-    <button
-      style="
-  margin-left: 240px;"
-      class="main"
-      onclick="changeTo98()"
-    >
-      Change Theme to WINDOWS 98
-    </button>
-    <button
-      style="
-  margin-left: 240px;"
-      class="main"
-      onclick="changeToXp()"
-    >
-      Change Theme to WINDOWS XP
-    </button>`;
-  }
-}
-
-customElements.define("debug-menu", debug);
-/*document.head.innerHTML = */`
-    <meta charset="utf-8" />
-    <title>itspablo</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="/styles/jquery/jqueryui.css"/>
-    <link id="stylelink" rel="stylesheet" href="/styles/themes/98.css" />
-    <link rel="stylesheet" href="/styles/menu98.css" />
-    <link rel="stylesheet" href="/styles/sys41.css" />
-    <link rel="stylesheet" href="/styles/somestyles.css" />
-    <script src="/scripts/allscripts.js"><\/script>
-    <script src="/scripts/sys41.js"><\/script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"><\/script>
-    <script src="/scripts/3party/jquery/jquery.js"><\/script>
-    <script src="/scripts/3party/jquery/jqueryui.js"><\/script>
-    <script src="/scripts/3party/darkmode.js"><\/script>
-      `;
-//////DARKMODE
-/*function addDarkmodeWidget() {
-  new Darkmode().showWidget();
-}
-window.addEventListener("load", addDarkmodeWidget);*/
-window.addEventListener("load", addSidebar());
-
-//Get text from URL
-getText("//itspablo.github.io/status.txt");
-
-async function getText(file) {
-  let x = await fetch(file);
-  let operational = await x.text();
-  document.getElementById("system-operational").innerHTML = operational;
-}
-
-//start menu
-var menu98content = `
+  //start menu
+  let menu98content = `
 <div
       id="menu98"
       style="display:none"
@@ -310,12 +252,13 @@ var menu98content = `
       </div>
     </div>`;
 
-class start extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = menu98content;
+  class start extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = menu98content;
+    }
   }
-}
 
-customElements.define("start-menu", start);
+  customElements.define("start-menu", start);
 
-/*document.querySelector('button[aria-label="close"]').onclick = function(){document.querySelector('button[aria-label="close"]').parentNode.removeChild(this)}*/
+  /*document.querySelector('button[aria-label="close"]').onclick = function(){document.querySelector('button[aria-label="close"]').parentNode.removeChild(this)}*/
+})()
